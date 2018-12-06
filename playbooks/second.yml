@@ -1,0 +1,16 @@
+---
+ - name: creating user with group
+   hosts: all
+   tasks:
+     - name : "creating group named grouptest"
+       group:
+         name: grouptest
+         gid: 7777
+         state: present
+     - name: "creating user named usertest"
+       user:
+         name: usertest
+         uid: 6666
+         group: grouptest
+         comment: my first user
+...

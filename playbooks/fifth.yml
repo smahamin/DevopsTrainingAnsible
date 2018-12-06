@@ -1,0 +1,10 @@
+- name: start the cron service
+  hosts: all
+  tasks:
+    - name: start cron every single reboot
+      cron:
+        state: present
+        reboot: yes
+        job: "/var/tmp/testdir/copylogs.txt"
+...
+

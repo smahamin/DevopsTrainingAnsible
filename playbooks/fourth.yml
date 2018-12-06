@@ -1,0 +1,9 @@
+---
+- name: installing talk 
+  hosts: all
+  tasks:
+    - name: install
+      apt:
+        name: talk
+        state: present     
+...

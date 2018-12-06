@@ -1,0 +1,16 @@
+---
+- name: first playbook
+  hosts: all
+  tasks:
+    - name: creating user test
+      user:
+        name: "test"
+        uid: "8888"
+        state: present
+
+    - name: creating directory
+      file:
+        path: /var/tmp/test
+        owner: test
+        state: directory  
+...

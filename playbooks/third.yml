@@ -1,0 +1,18 @@
+---
+- name: copying logs
+  hosts: all
+  tasks:
+    - name: creating directory named temporary
+      file: 
+        path: /var/tmp/testdir
+        state: directory
+        mode: "777"
+    - name: creating a file inside the directory
+      file:
+        src: /var/log/dpkg.log
+        dest: /var/tmp/testdir/copylogs.txt
+        state: touch
+        mode: "777"
+        owner: test
+...
+

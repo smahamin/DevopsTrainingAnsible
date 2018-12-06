@@ -1,0 +1,10 @@
+---
+- name: Instalation of docker
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Update the repositories
+      apt:
+        name: update
+        start: start
+...

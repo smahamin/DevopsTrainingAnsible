@@ -1,0 +1,29 @@
+---
+- name: NTP services
+  hosts: all
+  tasks:
+    - name: install ntp
+      apt:
+        name: ntp
+        state: present
+    - name: check if file present
+      stat:
+        path: /etc/ntp.conf
+      register: stat_result
+    - name: print error message
+      when: stat_result.stat.exists == false
+      debug:
+        msg: "file not present"
+    - name: print success message
+      when: stat_result.stat.exists == True
+      debug:
+        msg: "file present"
+
+    - name: start ntpd service on every reboot
+      service:
+        name: ntp
+        enabled: yes
+        state: started
+...
+
+
