@@ -4,7 +4,7 @@
   tasks:
     - name: creating user test
       user:
-        name: "test"
+        name: "testJ"
         uid: "8888"
         state: present
 
