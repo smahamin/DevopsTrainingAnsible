@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-pod
+
+spec:
+ template:
+   metadata:
+      name: sayalipod 
+      labels:
+        app: myapp
+        
+   spec:
+     containers:
+       - name: nginx-container
+         image: nginx
+ replicas: 5
+ 
+ selector:
+   matchLabels:
+     app: myapp
+...
