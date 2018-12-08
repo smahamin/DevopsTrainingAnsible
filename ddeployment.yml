@@ -2,22 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-deployment
+  name: sayalideployment
 
 spec:
  template:
    metadata:
-      name: myapp-pod
+      name: sayalipod
       labels:
-        app: myapp
-        
+        app: sayaliapp      
    spec:
      containers:
        - name: nginx-container
-         image: nginx:alpine
- replicas: 10
+         image: nginx
+ replicas: 5
  
  selector:
    matchLabels:
-     app: myapp
+     app: sayaliapp
 ...
