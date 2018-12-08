@@ -14,7 +14,7 @@ spec:
    spec:
      containers:
        - name: nginx-container
-         image: nginx
+         image: nginx:alpine
  replicas: 10
  
  selector:
